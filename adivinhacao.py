@@ -8,7 +8,9 @@ print("Número digitado: ", chute_str)
 
 chute = int(chute_str)
 
-if(numero_secreto == chute):
-    print("Acertou miserávi!!")
+if(numero_secreto < chute):
+    print("Você chutou alto!")
+elif (numero_secreto > chute):
+    print("Você chutou baixo!")
 else:
-    print("Erouuuuu!!")
+    print("Acertou miserávi!!")
