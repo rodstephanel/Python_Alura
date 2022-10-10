@@ -10,25 +10,28 @@ numero_tentativa = int(numero_tentativa_str)
 contador = 1
 acertou = False
 
-while(contador <= numero_tentativa):
+for contador in range(1, numero_tentativa + 1):
     
     print("Tentativa {} de {}".format(contador, numero_tentativa))
 
-    chute_str = input("Digite um número: ")
+    chute_str = input("Digite um número entre 1 e 20: ")
     print("Número digitado: ", chute_str)
     chute = int(chute_str)
 
+    if (chute < 1 or chute > 20):
+        print("Você digitiou um número fora do permitido e perdeu uma rodada!!")
+        print("Por favor digite um núemro entre 1 e 20")
+        continue
+
     if (numero_secreto == chute):
         print("Acertou miserávi!!")
-        contador = numero_tentativa + 1
         acertou = True
+        break
     else:
         if(numero_secreto < chute):
             print("Você chutou alto!")
         else:
             print("Você chutou baixo!")
-
-        contador = contador + 1
 
 if(acertou):
     print("Você é fera!!!! Que tal jogar novamente?")
